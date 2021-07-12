@@ -16,7 +16,7 @@
     --secondary-color: #58a0cc;
     --alternate-color: #8d8d8d;
 
-
+    --hero-strong: #121212;
     --hero-background-font-color: #f8f8f8;
 
     --max-width: 1400px;
@@ -29,6 +29,7 @@ body.dark {
     --font-color: #f2f2f2;
     --background-color: #121212;
 
+    --hero-strong: #fafafa;
     --hero-background-font-color: #141414;
 
     --invert: 1;
@@ -275,9 +276,9 @@ header {
     animation: .8s ease-in 0s FadeDelayed;
 }
 
-#hero-content {
+/* #hero-content {
     padding-bottom: 60px;
-}
+} */
 
 #hero h1 {
     font-weight: 400;
@@ -289,12 +290,13 @@ header {
 }
 
 #hero h1 strong {
-    font-weight: 500;
+    font-family: 'MySyne', sans-serif;
     font-size: 5rem;
+    font-weight: 500;
     line-height: .9em;
     letter-spacing: 3px;
     color: var(--hero-strong);
-    font-family: 'MySyne', sans-serif;
+    transition: color .5s ease 0s;
 }
 
 #hero h1 strong:before {
@@ -314,6 +316,12 @@ header {
     font-style: normal;
     text-decoration: none;
 }
+
+@keyframes FadeDelayed {
+    0%,50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 
 /* Typewriter Stuff */
 
@@ -337,20 +345,4 @@ header {
 
 #hero a.button {
     animation: 4s ease-out 0s FadeDelayed;
-}
-
-@keyframes FadeIn {
-    0% { opacity: 0; }
-    25% { opacity: .5; }
-    100% { opacity: 1; }
-}
-
-@keyframes FadeDelayed {
-    0%,50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes slideInFromBottom {
-    0% { transform: translateY(100%); }
-    100% { transform: translateX(0); }
 }
