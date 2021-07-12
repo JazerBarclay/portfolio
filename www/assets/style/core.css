@@ -20,7 +20,7 @@
     --alternate-color: #8d8d8d;
 
     --max-width: 800px;
-    --global-padding: 16px;
+    --global-padding: 32px;
 
     --invert: 0;
 }
@@ -158,7 +158,7 @@ header {
     align-items: center;
     grid-template-columns: auto 1fr auto auto;
     grid-template-areas: "logo . nav theme";
-    padding: var(--global-padding);
+    padding: calc(var(--global-padding)/2) var(--global-padding);
 }
 
 #nav {
@@ -196,6 +196,10 @@ header {
     max-height: 50px;
     filter: invert(var(--invert));
     transition: filter 1s ease 0s;
+}
+
+#logo img {
+    max-height: 50px;
 }
 
 #nav a:link, #nav a:visited, #nav a:active	{
@@ -456,3 +460,57 @@ header {
 }
 
 
+/* ========================= */
+/* ----- About Section ----- */
+/* ========================= */
+
+#about {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+#about .background {
+    display: grid;
+    justify-content: start;
+    padding-bottom: calc(var(--global-padding)/2);
+    overflow: hidden;
+    z-index: 1;
+}
+
+#about .background span {
+    box-sizing: border-box;
+    text-transform: uppercase;
+    text-align: center;
+
+    padding: 0;
+    border: 0;
+
+    color: var(--heading-color);
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.2rem;
+    line-height: 1em;
+}
+
+#about-container {
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+
+#about-container p {
+    font-size: 1.2rem;
+    text-align: left;
+    margin: .8rem 0;
+}
+
+#about-container img {
+    width: 100%;
+    height: 70vw;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: top center;
+}
