@@ -12,14 +12,14 @@
     --font-color: #181818;
     --background-color: #f2f2f2;
 
+    --hero-strong: #121212;
+    --hero-background-font-color: #f8f8f8;
+
     --primary-color: #1382cc;
     --secondary-color: #58a0cc;
     --alternate-color: #8d8d8d;
 
-    --hero-strong: #121212;
-    --hero-background-font-color: #f8f8f8;
-
-    --max-width: 1400px;
+    --max-width: 800px;
     --global-padding: 16px;
 
     --invert: 0;
@@ -77,7 +77,7 @@ section {
     display: grid;
     width: calc(100% - var(--global-padding) * 2);
     max-width: calc(var(--max-width) - var(--global-padding) * 2);
-    padding: var(--global-padding);
+    padding: calc(var(--global-padding) * 4) var(--global-padding);
 }
 
 /* =========================== */
@@ -129,6 +129,16 @@ a.button:hover {
     color: var(--background-color);
     background-color: var(--font-color);
     transition: color .5s ease, background .5s ease;
+}
+
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* =============================== */
@@ -296,7 +306,7 @@ header {
     line-height: .9em;
     letter-spacing: 3px;
     color: var(--hero-strong);
-    transition: color .5s ease 0s;
+    transition: 1s ease .2s;
 }
 
 #hero h1 strong:before {
@@ -346,3 +356,103 @@ header {
 #hero a.button {
     animation: 4s ease-out 0s FadeDelayed;
 }
+
+
+/* ============================ */
+/* ----- Projects Section ----- */
+/* ============================ */
+
+/* #projects {} */
+
+#projects .background {
+    display: grid;
+    align-items: center;
+    justify-content: start;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#projects .background span {
+    box-sizing: border-box;
+    text-transform: uppercase;
+    text-align: center;
+
+    padding: .5rem 0;
+    border: 0;
+
+    color: var(--heading-color);
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.2rem;
+    line-height: 1em;
+
+    /* writing-mode: horizontal-tb; */
+    /* overflow: hidden; */
+}
+
+.timeline {
+    text-align: center;
+    place-items: center;
+    width: calc(100% - var(--global-padding) * 2);
+}
+
+.title p {
+    color: var(--font-color-secondary);
+}
+
+#projects a:link, #projects a:visited, #projects a:active {
+    color: var(--heading-color);
+}
+
+/* On Hover Action */
+#projects a:hover {
+    color: var(--primary-color);
+}
+
+.card {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 70vw;
+    max-height: 400px;
+    margin: 1rem 0;
+    transition: .2s;
+
+    outline: 1px solid var(--alternate-color);
+}
+
+/* Vertical Rule */
+.vr {
+    border-left: 1px solid var(--alternate-color);
+    height: 30px;
+    width: 1px;
+    margin: 1rem;
+    place-self: center;
+}
+
+/* First Vertical Rule */
+#vr1::before {
+    display: block;
+    content: "";
+    position: relative;
+    left: -10px;
+    width: 20px;
+    height: 1px;
+    border-top: 1px solid var(--alternate-color);
+}
+
+/* Last Vertical Rule */
+#vr5::after {
+    display: block;
+    content: "";
+    position: relative;
+    left: -10px;
+    top: 30px;
+    width: 20px;
+    height: 1px;
+    border-top: 1px solid var(--alternate-color);
+}
+
+
