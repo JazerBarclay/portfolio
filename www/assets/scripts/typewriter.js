@@ -1,5 +1,5 @@
 const textSpan = document.querySelector("span.typewriter");
-const phrases = ["efficient applications!","beautiful websites!","fun projects!"];
+const phrases = textSpan.getAttribute("messages").split(",");
 let currentPhrase = [];
 let phrase = 0;
 let charPos = 0;
