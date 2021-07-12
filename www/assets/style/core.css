@@ -11,11 +11,22 @@
 :root {
     --font-color: #181818;
     --background-color: #f2f2f2;
+
+    --primary-color: #1382cc;
+    --secondary-color: #58a0cc;
+    --alternate-color: #8d8d8d;
+
+    --max-width: 1400px;
+    --global-padding: 16px;
+
+    --invert: 0;
 }
 
 body.dark {
     --font-color: #f2f2f2;
     --background-color: #121212;
+
+    --invert: 1;
 }
 
 * {
@@ -29,7 +40,7 @@ body.dark {
     scroll-behavior: smooth;
 }
 
-html,body,h1,h2,h3,h4,h5,h6,p { margin: 0; padding: 0; border: 0; }
+html,body,header,main,footer,h1,h2,h3,h4,h5,h6,p { margin: 0; padding: 0; border: 0; }
 
 html { height: 100vh; }
 
@@ -47,3 +58,109 @@ body {
 }
 
 main { flex: 1; }
+
+section {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    width: calc(100% - var(--global-padding) * 2);
+    max-width: calc(var(--max-width) - var(--global-padding) * 2);
+    padding: var(--global-padding);
+}
+
+/* =========================== */
+/* ----- Links / Anchors ----- */
+/* =========================== */
+
+/* Link Clickable, Visited and Active */
+a:link, a:visited, a:active	{
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+/* On Hover Action */
+a:hover {
+    color: var(--secondary-color);
+    transition: color .2s ease;
+}
+
+/* On Hold Action */
+a:active {
+    color: var(--secondary-color);
+}
+
+/* External Links Formatting */
+section a[href^="https://"]:not([href*="jazer.dev"]):after {
+    white-space: nowrap;
+    color: var(--primary-color);
+    content: " " url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=);
+}
+
+
+/* =============================== */
+/* ----- Header / Navigation ----- */
+/* =============================== */
+
+header {
+    position: fixed;
+    width: 100%;
+    min-height: 40px;
+    z-index: 100;
+}
+
+#header-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "logo . nav theme";
+    padding: var(--global-padding);
+}
+
+#nav {
+    grid-area: nav;
+    grid-template-columns: repeat(4,auto);
+    grid-gap: 2rem;
+    align-items: center;
+}
+
+#theme-button {
+    grid-area: theme;
+}
+
+#logo {
+    grid-area: logo;
+    image-rendering: crisp-edges;
+    max-height: 50px;
+    filter: invert(var(--invert));
+}
+
+#nav {
+    display: none;
+    padding: 0 2rem;
+}
+
+#nav a {
+    margin: 0;
+    border: 0;
+    color: var(--font-color) !important;
+    font-weight: 400;
+}
+
+#nav a:hover {
+    color: var(--primary-color) !important;
+}
+
+#nav .active {
+    color: var(--secondary-color);
+}
+
+#theme-button {
+    filter: invert(var(--invert));
+}
+
