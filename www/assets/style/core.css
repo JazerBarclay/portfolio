@@ -14,6 +14,7 @@
 
     --hero-strong: #121212;
     --hero-background-font-color: #f8f8f8;
+    --contact-background: #e2e2e2;
 
     --primary-color: #1382cc;
     --secondary-color: #58a0cc;
@@ -31,6 +32,7 @@ body.dark {
 
     --hero-strong: #fafafa;
     --hero-background-font-color: #141414;
+    --contact-background: #232323;
 
     --invert: 1;
 }
@@ -391,8 +393,7 @@ header {
     letter-spacing: 0.2rem;
     line-height: 1em;
 
-    /* writing-mode: horizontal-tb; */
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .timeline {
@@ -473,25 +474,24 @@ header {
 #about .background {
     display: grid;
     justify-content: start;
-    padding-bottom: calc(var(--global-padding)/2);
     overflow: hidden;
     z-index: 1;
 }
 
 #about .background span {
     box-sizing: border-box;
-    text-transform: uppercase;
-    text-align: center;
-
-    padding: 0;
+    overflow: hidden;
+    padding: .5rem 0;
     border: 0;
 
-    color: var(--heading-color);
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    text-align: left;
     font-size: 4rem;
     font-weight: 400;
-    font-family: 'Oswald', sans-serif;
     letter-spacing: 0.2rem;
     line-height: 1em;
+    color: var(--heading-color);
 }
 
 #about-container {
@@ -513,4 +513,162 @@ header {
     max-height: 600px;
     object-fit: cover;
     object-position: top center;
+}
+
+#contact {
+    display: grid;
+}
+
+#contact .background {
+    display: grid;
+    align-items: center;
+    justify-content: start;
+    padding-bottom: .5rem;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#contact .background span {
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: .5rem 0;
+    border: 0;
+
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 0rem;
+    line-height: 1em;
+    color: var(--heading-color);
+}
+
+#contact p {
+    margin: .3rem 0;
+}
+
+#contact strong {
+    color: #00aa00;
+    font-weight: 400;
+}
+
+#contact .waypoint {
+    padding-top: 20px;
+}
+
+form {
+    display: grid;
+}
+
+form label {
+    background-color: var(--contact-background);
+    padding: 10px 10px 0px 10px;
+    transition: color .5s ease 0s, background .5s ease 0s;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+input {
+    background-color: var(--contact-background);
+    border: 0;
+    box-sizing: border-box;
+    color: var(--font-color);
+    display: block;
+    font-size: 12pt;
+    margin-bottom: .8rem;
+    outline: none;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    transition: color .5s ease 0s, background .5s ease 0s;
+}
+
+textarea {
+    background: var(--contact-background);
+    border: 0;
+    box-sizing: border-box;
+    color: var(--font-color);
+    display: block;
+    font-size: 12pt;
+    margin-bottom: 6px;
+    outline: none;
+    padding: 10px 15px;
+    width: 100%;
+    height: 140px;
+    resize: none;
+    border-radius: 0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    transition: color .5s ease 0s, background .5s ease 0s;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 0 none;
+  -webkit-text-fill-color: var(--font-color);
+  -webkit-box-shadow: 0 0 0px 0px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+#success {
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    transition: height 0.25s;
+    width: 100%;
+}
+
+form .button {
+    background: transparent;
+    color: var(--primary-color);
+    justify-self: start;
+    font-size: 12pt;
+    margin: 5px 0 0 0;
+    outline: 0;
+    padding: 10px 30px;
+
+    border: 1px solid var(--primary-color);
+    box-sizing: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13pt;
+    padding: 10px 0;
+    border-radius: 6px;
+    transition: all 0.5s;
+}
+
+form .button:hover {
+    background: var(--font-color);
+    color: var(--background-color);
+    border: 1px solid var(--font-color);
+    transition: all 0.5s;
+}
+
+form .button:disabled,
+form .button[disabled]{
+  border: 1px solid transparent;
+  background-color: #cccccc;
+  color: #888;
+}
+
+
+footer {
+    display: grid;
+    place-items: center;
+    height: 3rem;
+    padding: var(--global-padding);
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--alternate-color);
 }
