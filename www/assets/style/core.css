@@ -615,10 +615,10 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 0 none;
-  -webkit-text-fill-color: var(--font-color);
-  -webkit-box-shadow: 0 0 0px 0px #000 inset;
-  transition: background-color 5000s ease-in-out 0s;
+    border: 0 none;
+    -webkit-text-fill-color: var(--font-color);
+    -webkit-box-shadow: 0 0 0 30px var(--contact-background) inset !important;
+    transition: color .5s ease 0s, box-shadow .5s ease 0s;
 }
 
 #success {
@@ -671,4 +671,55 @@ footer {
     text-align: center;
     font-size: 1.2rem;
     color: var(--alternate-color);
+}
+
+#social-panel {
+    position: relative;
+    justify-self: center;
+    align-self: center;
+
+    display: flex;
+    grid-gap: 10px;
+
+    z-index: 10;
+    animation: .5s ease-out 0s slideInFromBottom;
+}
+
+#social-panel svg {
+    fill: var(--font-color);
+    margin-top: 0px;
+    padding-bottom: 0px;
+    transition: .2s;
+}
+
+#social-panel svg:hover {
+    fill: var(--primary-color);
+    margin-top: -6px;
+    padding-bottom: 6px;
+    transition: .2s;
+}
+
+#email-panel {
+    position: relative;
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    grid-gap: 10px;
+    z-index: 10;
+    animation: .5s ease-out 0s slideInFromBottom;
+}
+
+#email-panel a {
+    font-weight: 500;
+    color: var(--font-color);
+    font-size: 1em;
+    text-orientation: mixed;
+    padding-bottom: 0px;
+    transition: .2s;
+}
+
+#email-panel a:hover {
+    color: var(--primary-color);
+    padding-bottom: 6px;
+    transition: .2s;
 }
