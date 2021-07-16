@@ -385,6 +385,7 @@ header {
     display: grid;
     align-items: center;
     justify-content: start;
+    padding: 0 2rem;
     overflow: hidden;
     z-index: 1;
 }
@@ -437,7 +438,9 @@ header {
 .timeline {
     text-align: center;
     place-items: center;
-    width: calc(100% - var(--global-padding) * 2);
+    /* width: calc(100% - var(--global-padding) * 2); */
+    width: 100%;
+    padding: var(--global-padding) 0;
 }
 
 .title p {
@@ -457,13 +460,16 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
     width: 100%;
-    height: 70vw;
-    max-height: 400px;
+    /* height: 100%; */
+    min-height: 50vw;
+    max-height: 800px;
     margin: 1rem 0;
     transition: .2s;
-
-    outline: 1px solid var(--alternate-color);
+    
+    overflow: hidden;
+    /* outline: 1px solid var(--alternate-color); */
 }
 
 /* Vertical Rule */
@@ -538,6 +544,52 @@ header {
     "more"
 }
 
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* transform: scale(1.2); */
+}
+
+/* OSX Style Window */
+.page {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    width: fit-content;
+    min-width: 600px;
+    max-width: 100%;
+}
+
+.titlebar {
+    background-color: #2b2b2b;
+    height: 44px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.dot-btn, .dot-btn::before, .dot-btn::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 12px;
+    height: 12px;
+    margin-left: 18px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.dot-btn::before { margin-left: -18px; }
+
+.page img {
+    max-width: 100%;
+}
+
 
 /* ========================= */
 /* ----- About Section ----- */
@@ -594,7 +646,7 @@ header {
 }
 
 #about-container p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left;
     margin: .8rem 0;
 }
@@ -928,6 +980,9 @@ footer {
         --max-width: 880px;
         /* --global-padding: 64px; */
     }
+    #hero h1 { grid-column: 1 / 13; }
+    #hero p { grid-column: 1 / 13; }
+    #hero a { grid-column: 1 / 13; }
 }
 
 /* Projects Timeline 12 Grid Layout */
@@ -939,8 +994,8 @@ footer {
         grid-column: 3 / 5;
         grid-row: 2 / 3;
         justify-self: start;
-        align-self: start;
-        margin-top: calc((var(--global-padding)/2) * -1 );
+        align-self: center;
+        /* margin-top: calc((var(--global-padding)/2) * -1 ); */
         margin-left: calc(var(--global-padding)/2);
     }
 
@@ -987,7 +1042,13 @@ footer {
         max-height: 40vw;
         margin-top: 10vh;
         margin-bottom: 10vh;
+        justify-content: end;
     }
+
+    .card:nth-child(even) {
+        justify-content: start;
+    }
+
 
     #vr1 { align-self: end; height: 80%; }
     #vr5::after { top: 100%; }
@@ -1001,7 +1062,7 @@ footer {
         padding: 60px 0;
         grid-gap: 0 1rem;
         grid-template-columns: 1fr var(--global-padding) minmax(auto, 575px) minmax(auto, 230px) minmax(auto, 575px) var(--global-padding) 1fr;
-        grid-template-rows: .5fr 1fr .5fr 1fr .5fr 1fr .5fr 1fr .5fr 1fr;
+        grid-template-rows: .01fr 1fr .5fr 1fr .5fr 1fr .5fr 1fr .5fr 1fr;
         grid-template-areas:
             ".     .       head    .       .       .       .    "
             ".     .       .       vr1     card1   card1   card1"
@@ -1028,28 +1089,13 @@ footer {
         grid-column: 8 / 13;
         grid-row: 1 / 2;
         align-self: end;
-        /* align-items: start;
-        justify-content: end;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        margin-top: -160px;
-        overflow: visible;
-        z-index: 1; */
     }
     
     #about .background span {
-        /* padding: 0 calc(var(--global-padding) * 2.5) 0 0;
-    
-        color: var(--background-text);
-        font-size: 18vw;
-        text-align: left;
-        letter-spacing: 0px;
-    
-        overflow: hidden; */
+        
     }
 
-    #about-container { padding-top: 128px }
+    /* #about-container { padding-top: 128px } */
 
     #about img {
         grid-column: 1 / 7;
@@ -1073,10 +1119,10 @@ footer {
 /* Contact Section */
 @media screen and (min-width: 1024px) {
 
-    #contact { position: relative; }
+    /* #contact { position: relative; } */
 
     #contact .background {
-        align-self: end;
+        /* align-self: end;
         align-items: start;
         justify-content: start;
         position: absolute;
@@ -1085,21 +1131,22 @@ footer {
         width: 100%;
         margin-top: -128px;
         overflow: visible;
-        z-index: 1;
+        z-index: 1; */
     }
     
     #contact .background span {
-        padding: 0 0 calc(var(--global-padding) * 2.5) calc(var(--global-padding)*3);
+        /* padding: 0 0 calc(var(--global-padding) * 2.5) calc(var(--global-padding)*3);
     
         color: var(--background-text);
         font-size: 18vw;
         text-align: left;
         letter-spacing: 0px;
     
-        overflow: hidden;
+        overflow: hidden; */
     }
 
     #contact .waypoint { padding: 0; }
+
     #contact-container { padding-top: 32px; padding-bottom: 96px; }
 
     #contact div > div { grid-column: 7 / 13; grid-row: 1; z-index: 2; }
@@ -1167,7 +1214,7 @@ footer {
     }
 
     #contact .background span {
-        font-size: 18vw;
+        /* font-size: 18vw; */
     }
 }
 
