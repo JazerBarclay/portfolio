@@ -8,7 +8,7 @@ window.addEventListener('scroll', function(e) {
           ) {
             let offsetEl = ((x.offsetTop - window.scrollY)/6 - ((x.offsetTop - window.scrollY)/4)) * -1;
             x.style.transform = `scale(1.2) translateY(${offsetEl}px)`;
-            console.log(offsetEl)
+            // console.log(offsetEl)
           } else {
             x.style.transform = `scale(1.2) translateY(40vh)`;
           }
