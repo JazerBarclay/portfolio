@@ -46,3 +46,12 @@ function checkActive(section, nav) {
     nav.classList.remove('active')
   }
 }
+
+document.body.addEventListener("mousemove", (e) => {
+  // console.log((e.pageY-this.window.scrollY) + "-" + document.querySelector('#header-background').offsetHeight)
+  if (window.innerWidth > 1024 && (e.pageY-this.window.scrollY) < document.querySelector('#header-background').offsetHeight) {
+    document.querySelector('#header-background').style.transform = "translateY(0)";
+  } else {
+      document.querySelector('#header-background').style.transform = "translateY(-100%)";
+  }
+})
