@@ -64,142 +64,139 @@
             </symbol>
         </svg>
 
-        <div class="wrapper">
+        <!-- Header and Nav -->
+        <header id="header">
+            <div id="header-background"></div>
+            <div id="header-container">
+                <a id="logo" href="#"><img src="assets/images/jb_sig_scaled.png" alt="JB Signature Logo" /></a>
+                <nav id="nav">
+                    <ul>
+                        <li><a id="nav-home" href="#">Home</a></li>
+                        <li><a id="nav-projects" href="#projects">Projects</a></li>
+                        <li><a id="nav-about" href="#about">About</a></li>
+                        <li><a id="nav-contact" href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="#" title="Toggle Theme" id="theme-button">
+                    <svg style="width: 30px; height: 30px;" viewBox="0 0 50 50"><use xlink:href="#sun-moon"></use></svg>
+                </a>
+            </div>
+        </header>
 
-            <!-- Header and Nav -->
-            <header id="header">
-                <div id="header-background"></div>
-                <div id="header-container">
-                    <a id="logo" href="#"><img src="assets/images/jb_sig_scaled.png" alt="JB Signature Logo" /></a>
-                    <nav id="nav">
-                        <ul>
-                            <li><a id="nav-home" href="#">Home</a></li>
-                            <li><a id="nav-projects" href="#projects">Projects</a></li>
-                            <li><a id="nav-about" href="#about">About</a></li>
-                            <li><a id="nav-contact" href="#contact">Contact</a></li>
-                        </ul>
-                    </nav>
-                    <a href="#" title="Toggle Theme" id="theme-button">
-                        <svg style="width: 30px; height: 30px;" viewBox="0 0 50 50"><use xlink:href="#sun-moon"></use></svg>
+        <main>
+            <section id="hero">
+                <div class="background"><span class="unselectable parallax">Hello</span></div>
+                <div id="hero-content" class="container">
+                    <h1>Hey there! I'm
+                    <strong>Jazer Barclay</strong></h1>
+                    <p id="hero-subtitle">
+                        A creative software developer <em>building
+                        <span class="typewriter" messages="efficient applications!,beautiful websites!,fun projects!">
+                            efficient applications
+                        </span></em>
+                    </p>
+                    <a href="#projects" class="button">View my work</a>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="container timeline">
+                    <!-- Timeline Title -->
+                    <div class="background"><span class="unselectable">Case Studies</span></div>
+
+                    <!-- First Card -->
+                    <div id="vr1" class="vr"></div>
+                    <a href="#" id="card1" class="card">
+                        <img class="parallax" src="assets/images/blog.png" />
                     </a>
+                    <div id="header1" class="title"> <p>2021</p> <h2><a href="#">Full Stack Blog with API</a></h2> </div>
+
+                    <!-- Second Card -->
+                    <div id="vr2" class="vr"></div>
+                    <a href="#" id="card2" class="card"> <img class="parallax" src="assets/images/pomodoro.png" /> </a>
+                    <div id="header2" class="title"> <p>2020</p> <h2><a href="#">JavaFX Pomodoro Timer</a></h2> </div>
+
+                    <!-- Third Card -->
+                    <div id="vr3" class="vr"></div>
+                    <a href="#" id="card3" class="card">
+                        <img class="parallax" src="assets/images/tora-tech-pos.jpg" />
+                    </a>
+                    <div id="header3" class="title"> <p>2018</p> <h2><a href="#">Tora Tech POS System</a></h2> </div>
+
+                    <!-- Fourth Card -->
+                    <div id="vr4" class="vr"></div>
+                    <a href="#" id="card4" class="card">
+                        <img class="parallax" src="assets/images/village-cleaners.png" />
+                    </a>
+                    <div id="header4" class="title"> <p>2016</p> <h2><a href="#">Village Cleaners Website</a></h2> </div>
+
+                    <!-- End Vertical Rule -->
+                    <div id="vr5" class="vr"></div>
+                    <!-- <a href="/projects.html" id="more-projects">
+                        <svg style="width: 1.2em; height: 1.2em;" viewBox="0 0 50 50"><use xlink:href="#icon-github"></use></svg>
+                        View More
+                    </a> -->
+
+                    <!-- Dots Background -->
+                    <div class="dots"></div>
                 </div>
-            </header>
+            </section>
 
-            <main>
-                <section id="hero">
-                    <div class="background"><span class="unselectable parallax">Hello</span></div>
-                    <div id="hero-content" class="container">
-                        <h1>Hey there! I'm
-                        <strong>Jazer Barclay</strong></h1>
-                        <p id="hero-subtitle">
-                            A creative software developer <em>building
-                            <span class="typewriter" messages="efficient applications!,beautiful websites!,fun projects!">
-                                efficient applications
-                            </span></em>
-                        </p>
-                        <a href="#projects" class="button">View my work</a>
+            <section id="about">
+                <div id="about-container" class="container">
+                    <div class="background"><span class="unselectable">Hey There</span></div>
+
+                    <div id="about-content">
+                        <p>My name is Jazer Barclay and I'm a second year student studying computer science at the University of Brighton.</p>
+                        <p>My studies focus on efficient full stack development, cloud infrastructure, artificial intelligence and machine learning.</p>
+                        <p>I enjoy designing and building projects for both myself and prospective clients with performance, UX and UI in mind.</p>
+                        <a id="cv-download" class="button" href="assets/Jazer-Barclay-CV-2021.pdf">View My CV</a>
                     </div>
-                </section>
 
-                <section id="projects">
-                    <div class="container timeline">
-                        <!-- Timeline Title -->
-                        <div class="background"><span class="unselectable">Case Studies</span></div>
-
-                        <!-- First Card -->
-                        <div id="vr1" class="vr"></div>
-                        <a href="#" id="card1" class="card">
-                            <img class="parallax" src="assets/images/blog.png" />
-                        </a>
-                        <div id="header1" class="title"> <p>2021</p> <h2><a href="#">Full Stack Blog with API</a></h2> </div>
-
-                        <!-- Second Card -->
-                        <div id="vr2" class="vr"></div>
-                        <a href="#" id="card2" class="card"> <img class="parallax" src="assets/images/pomodoro.png" /> </a>
-                        <div id="header2" class="title"> <p>2020</p> <h2><a href="#">JavaFX Pomodoro Timer</a></h2> </div>
-
-                        <!-- Third Card -->
-                        <div id="vr3" class="vr"></div>
-                        <a href="#" id="card3" class="card">
-                            <img class="parallax" src="assets/images/tora-tech-pos.jpg" />
-                        </a>
-                        <div id="header3" class="title"> <p>2018</p> <h2><a href="#">Tora Tech POS System</a></h2> </div>
-
-                        <!-- Fourth Card -->
-                        <div id="vr4" class="vr"></div>
-                        <a href="#" id="card4" class="card">
-                            <img class="parallax" src="assets/images/village-cleaners.png" />
-                        </a>
-                        <div id="header4" class="title"> <p>2016</p> <h2><a href="#">Village Cleaners Website</a></h2> </div>
-
-                        <!-- End Vertical Rule -->
-                        <div id="vr5" class="vr"></div>
-                        <!-- <a href="/projects.html" id="more-projects">
-                            <svg style="width: 1.2em; height: 1.2em;" viewBox="0 0 50 50"><use xlink:href="#icon-github"></use></svg>
-                            View More
-                        </a> -->
-
-                        <!-- Dots Background -->
-                        <div class="dots"></div>
-                    </div>
-                </section>
-
-                <section id="about">
-                    <div id="about-container" class="container">
-                        <div class="background"><span class="unselectable">Hey There</span></div>
-
-                        <div id="about-content">
-                            <p>My name is Jazer Barclay and I'm a second year student studying computer science at the University of Brighton.</p>
-                            <p>My studies focus on efficient full stack development, cloud infrastructure, artificial intelligence and machine learning.</p>
-                            <p>I enjoy designing and building projects for both myself and prospective clients with performance, UX and UI in mind.</p>
-                            <a id="cv-download" class="button" href="assets/Jazer-Barclay-CV-2021.pdf">View My CV</a>
-                        </div>
-
-                        <div id="about-image"><img src="assets/images/profile.jpg" alt="A picture of me" hover-text="Hello 👋🏻"></div>
-                    </div>
-                    <div id="about-tab-right"></div>
-                </section>
-
-                <section id="contact">
-                    <div id="contact-container" class="container">
-                        <div class="background"><span class="unselectable">Let's Connect</span></div>
-
-                        <div id="contact-content">
-                            <p>I'm <strong>available</strong> for new full-time and freelance development opportunities!</p>
-                            <p>Let's get in touch and talk more about your projects.</p>
-                        </div>
-
-                        <form class="waypoint" id="contact-form" action="mail.php" method="POST">
-                            <label for="form_email">Email Address:</label>
-                            <input id="form_email" type="email" name="email" required />
-
-                            <label for="form_name">Name:</label>
-                            <input id="form_name" type="text" name="name" required />
-
-                            <label for="form_message">Your Message:</label>
-                            <textarea id="form_message" name="message"></textarea>
-                            
-                            <input class="button" type="submit" id="submit" name="submit" value="Send" />
-                        </form>
-                    </div>
-                </section>
-            </main>
-
-            <footer>
-                <div id="social-panel">
-                    <a href="https://github.com/jazerbarclay" title="Check my code portfolio on Github" target="_blank"><svg style="width: 30px; height: 30px;" viewBox="0 0 50 50"><use xlink:href="#icon-github"></use></svg></a>
-                    <a href="https://www.linkedin.com/in/jazer-barclay" title="View my education and work history on LinkedIn" target="_blank"><svg style="width: 30px; height: 30px;" viewBox="0 0 50 50"><use xlink:href="#icon-linkedin"></use></svg></a>
-                    <a href="https://twitter.com/jazerbarclay" title="Follow me on Twitter for updates" target="_blank"><svg style="width: 30px; height: 30px;" viewBox="0 0 50 50"><use xlink:href="#icon-twitter"></use></svg></a>
+                    <div id="about-image"><img src="assets/images/profile.jpg" alt="A picture of me" hover-text="Hello 👋🏻"></div>
                 </div>
-            
-                <div id="email-panel">
-                    <a href="mailto:contact@jazer.co.uk" title="Send me an email from your personal mail app">contact@jazer.co.uk</a>
-                </div>
+                <div id="about-tab-right"></div>
+            </section>
 
-                <p>Hand Crafted by Jazer Barclay</p>
-                <p>&copy; 2021</p>
-            </footer>
-        </div>
+            <section id="contact">
+                <div id="contact-container" class="container">
+                    <div class="background"><span class="unselectable">Let's Connect</span></div>
+
+                    <div id="contact-content">
+                        <p>I'm <strong>available</strong> for new full-time and freelance development opportunities!</p>
+                        <p>Let's get in touch and talk more about your projects.</p>
+                    </div>
+
+                    <form class="waypoint" id="contact-form" action="mail.php" method="POST">
+                        <label for="form_email">Email Address:</label>
+                        <input id="form_email" type="email" name="email" required />
+
+                        <label for="form_name">Name:</label>
+                        <input id="form_name" type="text" name="name" required />
+
+                        <label for="form_message">Your Message:</label>
+                        <textarea id="form_message" name="message"></textarea>
+                        
+                        <input class="button" type="submit" id="submit" name="submit" value="Send" />
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div id="social-panel">
+                <a href="https://github.com/jazerbarclay" title="Check my code portfolio on Github" target="_blank"><svg style="width: 30px; height: 30px;" viewBox="0 0 50 50"><use xlink:href="#icon-github"></use></svg></a>
+                <a href="https://www.linkedin.com/in/jazer-barclay" title="View my education and work history on LinkedIn" target="_blank"><svg style="width: 30px; height: 30px;" viewBox="0 0 50 50"><use xlink:href="#icon-linkedin"></use></svg></a>
+                <a href="https://twitter.com/jazerbarclay" title="Follow me on Twitter for updates" target="_blank"><svg style="width: 30px; height: 30px;" viewBox="0 0 50 50"><use xlink:href="#icon-twitter"></use></svg></a>
+            </div>
+        
+            <div id="email-panel">
+                <a href="mailto:contact@jazer.co.uk" title="Send me an email from your personal mail app">contact@jazer.co.uk</a>
+            </div>
+
+            <p>Hand Crafted by Jazer Barclay</p>
+            <p>&copy; 2021</p>
+        </footer>
 
         <!-- Scripts -->
         <script src="assets/scripts/nav.js"></script>
