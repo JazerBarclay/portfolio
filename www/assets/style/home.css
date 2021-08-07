@@ -43,6 +43,14 @@ body.dark {
     --invert: 1;
 }
 
+body.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
 * {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
@@ -64,12 +72,35 @@ body {
     display: flex;
     flex-flow: column;
 
-    font-size: 16px;
     font-family: 'Montserrat', sans-serif;
 
     color: var(--font-color);
     background-color: var(--background-color);
     transition: background .5s ease 0s, color 1s ease 0s;
+}
+
+.blank {
+    position: fixed;
+    min-width: 100vw;
+    background-color: var(--background-color);
+    z-index: 1000;
+    opacity: 0;
+    height: 0;
+    animation: 1s linear 0s FadeOut;
+}
+
+@keyframes FadeOut {
+    0%,50% { 
+      opacity: 1;
+      height: 100vh;
+    }
+    99% {
+      height: 100vh;
+    }
+    100% {
+      opacity: 0;
+      height: 0px;
+    }
 }
 
 main { flex: 1; }
@@ -157,7 +188,7 @@ header {
     position: fixed;
     width: 100%;
     min-height: 40px;
-    animation: .5s linear 0s slideInFromTop;
+    animation: .5s linear .5s slideInFromTop;
     z-index: 100;
 }
 
@@ -169,7 +200,7 @@ header {
     height: calc(50px + var(--global-padding));
     background-color: var(--background-color-alt);
     transform: translateY(-100%);
-    transition: transform .5s ease 0s;
+    transition: transform .5s ease 0s, color .5s ease, background .5s ease;
     /* z-index: 100; */
 }
 
@@ -311,7 +342,7 @@ header {
     overflow: hidden;
 
     transition: color .6s ease 0s;
-    animation: .8s ease-in 0s FadeDelayed;
+    animation: .8s ease-in .5s FadeDelayed;
 }
 
 /* #hero-content {
@@ -324,7 +355,7 @@ header {
     line-height: .4rem;
     margin: 0;
     margin-bottom: .6em;
-    animation: 2s ease-in-out 0s FadeDelayed;
+    animation: 2s ease-in-out .5s FadeDelayed;
 }
 
 #hero h1 strong {
@@ -568,8 +599,13 @@ header {
 }
 
 .parallax {
+    --transition-time: .15s;
+    --transition-ease: ease-out;
     transform: scale(1.2);
-    transition: transform .1s linear 0s;
+    -webkit-transition: transform var(--transition-time) var(--transition-ease) 0s;
+    -moz-transition: transform var(--transition-time) var(--transition-ease) 0s;
+    -o-transition: transform var(--transition-time) var(--transition-ease) 0s;
+    transition: transform var(--transition-time) var(--transition-ease) 0s;
 }
 
 .card img {
@@ -872,13 +908,18 @@ form .button[disabled]{
 footer {
     display: grid;
     place-items: center;
-    height: 3rem;
-    padding: var(--global-padding);
+    min-height: 1rem;
+    padding: calc(var(--global-padding)*.8) var(--global-padding);
     text-align: center;
     font-size: 1.2rem;
     color: var(--alternate-color);
     background-color: var(--background-color);
     z-index: 2;
+    transition: color .5s ease, background .5s ease;
+}
+
+footer p {
+    margin: .2rem 0;
 }
 
 #social-panel {
@@ -890,7 +931,6 @@ footer {
     grid-gap: 10px;
 
     z-index: 10;
-    animation: .5s ease-out 0s slideInFromBottom;
 }
 
 #social-panel svg {
@@ -914,7 +954,6 @@ footer {
     align-self: center;
     grid-gap: 10px;
     z-index: 10;
-    animation: .5s ease-out 0s slideInFromBottom;
 }
 
 #email-panel a {
@@ -1331,14 +1370,14 @@ footer {
         display: grid;
         bottom: 0;
         left: calc(var(--global-padding) * 1);
-        animation: .5s ease-out 0s slideInFromBottom;
+        animation: .5s ease-out .5s slideInFromBottom;
     }
 
     #email-panel {
         position: fixed;
         bottom: 0;
         right: calc(var(--global-padding) * 1);
-        animation: .5s ease-out 0s slideInFromBottom;
+        animation: .5s ease-out .5s slideInFromBottom;
     }
 
     #email-panel a {
