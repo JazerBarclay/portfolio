@@ -6,9 +6,9 @@
     $_POST = json_decode(file_get_contents('php://input'), true);
 
     // Takes the value from variables ready for sending
-    $name = $_POST['form_name'];
-    $email = $_POST['form_email'];
-    $postmessage = $_POST['form_message'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $postmessage = $_POST['message'];
     $to = "contact@jazer.co.uk";
     $subject = "Website inquiry from " . $name;
 
