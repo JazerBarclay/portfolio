@@ -5,6 +5,9 @@ let aimY = [0];
 let speed = 0.2;
 let i = 0;
 
+let time = Date.now();
+let wait = 2;
+
 elements.forEach(x => {
   currentY[i] = 0;
   aimY[i] = 0;
@@ -13,19 +16,23 @@ elements.forEach(x => {
 
 const animate = () => {
   
-  i = 0;
-  elements.forEach(x => {
+  if ((time + wait - Date.now()) < 0) {
+    time = Date.now();
+    
+    i = 0;
+    elements.forEach(x => {
 
-    if (
-        x.offsetTop + window.innerHeight*1.5 > window.scrollY && 
-        x.offsetTop - window.innerHeight/2 < (x.offsetHeight + window.scrollY)
-    ) {
-      currentY[i] += (aimY[i] - currentY[i]) * speed;
-      x.style.transform = `scale(1.2) translateY(${currentY[i]}px)`;
-    }
+      if (
+          x.offsetTop + window.innerHeight*1.5 > window.scrollY && 
+          x.offsetTop - window.innerHeight/2 < (x.offsetHeight + window.scrollY)
+      ) {
+        currentY[i] += (aimY[i] - currentY[i]) * speed;
+        x.style.transform = `scale(1.2) translateY(${currentY[i]}px)`;
+      }
 
-    i++;
-  })
+      i++;
+    })
+  }
 
   requestAnimationFrame(animate);
 }
