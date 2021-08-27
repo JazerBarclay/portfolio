@@ -225,7 +225,7 @@
                 let data = {
                     'name': document.querySelector('#form_name').value,
                     'email': document.querySelector('#form_email').value,
-                    'message': '<br>' + document.querySelector('#form_message').value.replace(/(?:\r\n|\r|\n)/g, '<br>')
+                    'message': document.querySelector('#form_message').value.replace(/(?:\r\n|\r|\n)/g, '<br>')
                 }
 
                 // If required data is missing, return with default action
