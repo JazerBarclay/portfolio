@@ -2,11 +2,11 @@ const elements = document.querySelectorAll('.parallax');
 
 let currentY = [0];
 let aimY = [0];
-let speed = 0.2;
+let speed = 0.15;
 let i = 0;
 
 let time = Date.now();
-let wait = 2;
+let wait = 20;
 
 elements.forEach(x => {
   currentY[i] = 0;
@@ -23,7 +23,7 @@ const animate = () => {
     elements.forEach(x => {
 
       if (
-          x.offsetTop + window.innerHeight*1.5 > window.scrollY && 
+          x.offsetTop + window.innerHeight/2 > window.scrollY && 
           x.offsetTop - window.innerHeight/2 < (x.offsetHeight + window.scrollY)
       ) {
         currentY[i] += (aimY[i] - currentY[i]) * speed;
