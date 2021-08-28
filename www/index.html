@@ -193,13 +193,17 @@
             </div>
         
             <div id="email-panel">
-                <a href="mailto:contact@jazer.co.uk" title="Send me an email from your personal mail app">contact@jazer.co.uk</a>
+                <a href="mailto:contact@jazer.dev" title="Send me an email from your personal mail app">contact@jazer.dev</a>
             </div>
 
             <p>Hand Crafted by Me</p>
             <p>Hosted on <a href="https://www.github.com/jazerbarclay/portfolio">GitHub</a></p>
             <p>&copy; 2021</p>
         </footer>
+
+        <div id="notification">
+            Notification
+        </div>
 
         <!-- Scripts -->
         <script src="assets/scripts/app.js"></script>
@@ -218,7 +222,11 @@
             //     document.querySelector('.mailResponse').style.display = "none";
             // })
 
+
+            const notification = document.querySelector('#notification')
+
             const submitButton = document.querySelector('#submit')
+
             submitButton.addEventListener("click", e => {
 
                 // Group data for PHP to use
@@ -251,8 +259,11 @@
                 .then(results => results.json())
                 .then(res => {
                     document.querySelector('#contact-form').reset();
-                    // document.querySelector('.mailResponseText').innerHTML = res.message;
-                    // document.querySelector('.mailResponse').style.display = "block";
+                    notification.classList.remove('notify')
+                    void notification.offsetWidth;
+                    notification.innerHTML = res.message
+                    notification.classList.add('notify')
+
                     console.log(res.message)
                 })
 

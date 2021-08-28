@@ -86,7 +86,7 @@ body {
     z-index: 1000;
     opacity: 0;
     height: 0;
-    animation: 1s linear 0s FadeOut;
+    animation: 1.5s linear 0s FadeOut;
 }
 
 @keyframes FadeOut {
@@ -985,6 +985,38 @@ footer p {
         transition: transform .5s ease-out;
     }
 }
+
+#notification {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 40px;
+    background-color: var(--background-color-alt);
+    transform: translateY(100%);
+    font-size: 2rem;
+    z-index: 100;
+}
+
+.notify {
+    animation: 6s linear 0s ShowNotification;
+}
+  
+@keyframes ShowNotification {
+    0% {
+        transform: translateY(100%);
+    }
+    10%, 90% { 
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+
+
 
 /* Expand Subtitle for Typwriter */
 @media screen and (min-width: 480px) {
