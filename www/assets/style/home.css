@@ -993,14 +993,14 @@ footer p {
     width: 100%;
     margin: 0;
     padding: 40px;
-    background-color: var(--background-color-alt);
+    background-color: var(--primary-color);
     transform: translateY(100%);
-    font-size: 2rem;
+    font-size: 1.2rem;
     z-index: 100;
 }
 
 .notify {
-    animation: 6s linear 0s ShowNotification;
+    animation: 5s linear 0s ShowNotification;
 }
   
 @keyframes ShowNotification {
@@ -1014,9 +1014,6 @@ footer p {
         transform: translateY(100%);
     }
 }
-
-
-
 
 /* Expand Subtitle for Typwriter */
 @media screen and (min-width: 480px) {
