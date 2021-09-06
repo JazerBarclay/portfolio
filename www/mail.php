@@ -9,7 +9,7 @@
     $name = $_POST['name'];
     $email = $_POST['email'];
     $postmessage = $_POST['message'];
-    $to = "contact@jazer.dev";
+    $to = "webform@jazer.co.uk";
     $subject = "Website inquiry from " . $name;
 
     // Email template
