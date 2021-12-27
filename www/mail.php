@@ -12,6 +12,13 @@
     $to = "webform@jazer.co.uk";
     $subject = "Website inquiry from " . $name;
 
+    if( !isset($name) || trim($name) === '' || !isset($email) || trim($email) === '' ) {
+        echo json_encode(array(
+            'error'=> true,
+            'message' => 'Error sending message'
+        ));
+    }
+
     // Email template
     $message = "<b>Name : </b>". $name . "<br>";
     $message .= "<b>Email Address : </b>" . $email . "<br>";
@@ -28,7 +35,7 @@
             'success'=> true,
             'message' => 'Message sent successfully'
         ));
-    }else {
+    } else {
         echo json_encode(array(
             'error'=> true,
             'message' => 'Error sending message'
