@@ -17,6 +17,7 @@
             'error'=> true,
             'message' => 'Error sending message'
         ));
+        return;
     }
 
     // Email template
